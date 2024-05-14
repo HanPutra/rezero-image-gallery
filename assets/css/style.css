@@ -1,0 +1,105 @@
+/* author: Handika Putra  */
+/* github account: https://github.com/HanPutra */
+
+/* fonts */
+@font-face {
+  font-family: "Rubik";
+  src: url("../fonts/Rubik-Regular.woff2") format("woff2");
+}
+/* end of fonts */
+
+/* global variable */
+:root {
+  --dark: #181818;
+  --light: #f1f2f3;
+  --success: #198754;
+  --danger: #dc3545;
+  --black: #000000;
+}
+/* end of global variable */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* html {
+  overflow-x: hidden;
+} */
+
+body {
+  font-family: "Rubik", sans-serif;
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* popup */
+.popup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--light);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.alert {
+  position: relative;
+  width: calc(100% - (3rem * 2));
+  height: calc(100% - (3rem * 2));
+  background-color: var(--dark);
+  border-radius: 2rem;
+  padding: 4rem 6rem;
+}
+.alert h1,
+.alert p {
+  width: 100%;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.alert .confirm {
+  position: absolute;
+  bottom: 4rem;
+  left: 6rem;
+  right: 6rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.confirm input {
+  font-size: 2rem;
+  font-weight: bold;
+  width: 24rem;
+  height: 6rem;
+  border-radius: 2rem;
+  border: none;
+  color: var(--light);
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 9px #999;
+  transition: opacity 0.1s ease-in-out;
+}
+.confirm input:hover {
+  opacity: 0.8;
+}
+.confirm input:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.confirm input:first-child {
+  background-color: var(--success);
+}
+.confirm input:last-child {
+  background-color: var(--danger);
+}
+/* end of popup */
