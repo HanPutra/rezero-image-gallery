@@ -1,1 +1,1 @@
-# simple-gallery
+# simple-rezero-image-gallery
