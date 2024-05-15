@@ -126,7 +126,7 @@ h1 {
   position: relative;
   -o-object-fit: cover;
   object-fit: cover;
-  display: block;
+  display: flex;
   margin: 0.2rem 0.2rem;
   border-radius: 1rem;
   overflow: hidden;
