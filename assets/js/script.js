@@ -22,32 +22,98 @@ no.addEventListener("click", function () {
 // end of popup
 
 // gallery
-document.addEventListener("DOMContentLoaded", function () {
-  const galleryItem = document.querySelectorAll(".gallery-item");
+const galleryItem = document.querySelectorAll(".gallery-item");
 
-  galleryItem.forEach((container) => {
-    const image = container.querySelector("img");
-    const divOverlay = document.createElement("div");
-    const divImageText = document.createElement("div");
-    divOverlay.classList.add("overlay");
-    divImageText.classList.add("image-text");
-    divImageText.innerText = image.alt;
+galleryItem.forEach((container) => {
+  const image = container.querySelector("img");
+  const divOverlay = document.createElement("div");
+  const divImageText = document.createElement("div");
+  divOverlay.classList.add("gallery-overlay");
+  divImageText.classList.add("image-text");
+  divImageText.innerText = image.alt;
 
-    container.appendChild(divOverlay);
-    container.appendChild(divImageText);
+  container.appendChild(divOverlay);
+  container.appendChild(divImageText);
 
-    container.addEventListener("mouseover", () => {
-      divOverlay.style.opacity = 1;
-      divImageText.style.opacity = 1;
-    });
-    container.addEventListener("mouseout", () => {
-      divOverlay.style.opacity = 0;
-      divImageText.style.opacity = 0;
-    });
+  container.addEventListener("mouseover", () => {
+    divOverlay.style.opacity = 1;
+    divImageText.style.opacity = 1;
+  });
+  container.addEventListener("mouseout", () => {
+    divOverlay.style.opacity = 0;
+    divImageText.style.opacity = 0;
   });
 });
-
 // end of gallery
+
+// overlay
+const overlay = document.querySelector("#overlay");
+const closeButton = document.createElement("span");
+const overlayContent = document.createElement("div");
+const overlayImage = document.createElement("img");
+const overlayText = document.createElement("div");
+const overlayTitle = document.createElement("h2");
+const overlayDesc = document.createElement("p");
+const leftArrow = document.createElement("span");
+const rightArrow = document.createElement("span");
+
+overlayContent.classList.add("overlay-content");
+closeButton.classList.add("close-button");
+overlayImage.classList.add("overlay-image");
+overlayText.classList.add("overlay-text");
+overlayTitle.classList.add("overlay-title");
+overlayDesc.classList.add("overlay-desc");
+leftArrow.classList.add("left-arrow");
+rightArrow.classList.add("right-arrow");
+
+overlay.appendChild(overlayContent);
+overlay.appendChild(closeButton);
+overlayContent.appendChild(overlayImage);
+overlayContent.appendChild(overlayText);
+overlayText.appendChild(overlayTitle);
+overlayText.appendChild(overlayDesc);
+overlay.appendChild(leftArrow);
+overlay.appendChild(rightArrow);
+
+closeButton.innerHTML = "&times;";
+leftArrow.innerHTML = "&lt;";
+rightArrow.innerHTML = "&gt;";
+
+let currentIndex = 0;
+
+function showOverlay(index) {
+  const galleryImg = galleryItem[index];
+  const img = galleryImg.querySelector("img");
+  overlayImage.src = img.src;
+  overlayTitle.innerText = img.alt;
+  overlayDesc.innerText = img.getAttribute("data-description");
+  overlay.style.display = "flex";
+  currentIndex = index;
+}
+
+function hideOverlay() {
+  overlay.style.display = "none";
+}
+
+function showPrevImage() {
+  currentIndex = currentIndex === 0 ? galleryItem.length - 1 : currentIndex - 1;
+  showOverlay(currentIndex);
+}
+
+function showNextImage() {
+  currentIndex = currentIndex === galleryItem.length - 1 ? 0 : currentIndex + 1;
+  showOverlay(currentIndex);
+}
+
+galleryItem.forEach((galleryImg, index) => {
+  galleryImg.addEventListener("click", () => showOverlay(index));
+});
+
+closeButton.addEventListener("click", hideOverlay);
+leftArrow.addEventListener("click", showPrevImage);
+rightArrow.addEventListener("click", showNextImage);
+
+// end of overlay
 
 // for a while (ntar dihapus)
 popup.style.display = "none";
