@@ -108,13 +108,13 @@ function hideOverlay() {
   overlay.style.display = "none";
 }
 
-function showPrevImage() {
-  currentIndex = currentIndex === 0 ? galleryItem.length - 1 : currentIndex - 1;
+function showNextImage() {
+  currentIndex = (currentIndex + 1) % galleryItem.length;
   showOverlay(currentIndex);
 }
 
-function showNextImage() {
-  currentIndex = currentIndex === galleryItem.length - 1 ? 0 : currentIndex + 1;
+function showPreviousImage() {
+  currentIndex = (currentIndex - 1 + galleryItem.length) % galleryItem.length;
   showOverlay(currentIndex);
 }
 
@@ -123,10 +123,19 @@ galleryItem.forEach((galleryImg, index) => {
 });
 
 closeButton.addEventListener("click", hideOverlay);
-leftArrow.addEventListener("click", showPrevImage);
+leftArrow.addEventListener("click", showPreviousImage);
 rightArrow.addEventListener("click", showNextImage);
+
+overlay.addEventListener("wheel", (event) => {
+  event.preventDefault();
+  if (event.deltaY > 0) {
+    showNextImage();
+  } else {
+    showPreviousImage();
+  }
+});
 
 // end of overlay
 
 // for a while (ntar dihapus)
-popup.style.display = "none";
+// popup.style.display = "none";
