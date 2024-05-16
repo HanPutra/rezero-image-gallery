@@ -89,6 +89,19 @@ function showOverlay(index) {
   overlayDesc.innerText = img.getAttribute("data-description");
   overlay.style.display = "flex";
   currentIndex = index;
+
+  // calc max-content width of overlay-title
+  overlayTitle.style.width = "auto";
+  const maxContentWidth = overlayTitle.scrollWidth;
+  overlayTitle.style.width = `calc(${maxContentWidth}px + 2rem)`;
+
+  // limit max character on overlay-desc
+  const maxCharacters = 400;
+  const originalText = overlayDesc.innerText;
+  if (originalText.length > maxCharacters) {
+    const truncatedText = originalText.substring(0, maxCharacters) + "...";
+    overlayDesc.innerText = truncatedText;
+  }
 }
 
 function hideOverlay() {
