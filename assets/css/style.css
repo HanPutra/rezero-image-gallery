@@ -231,8 +231,9 @@ h1 {
   justify-content: center;
   align-items: center;
   background-color: var(--light);
-  border-top-right-radius: 2rem;
-  border-top-left-radius: 2rem;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  padding: 0 1rem;
 }
 
 .overlay-text .overlay-desc {
@@ -298,3 +299,21 @@ h1 {
   transform: translate(0.5rem);
 }
 /* end of overlay */
+
+/* footer */
+footer {
+  position: relative;
+  width: auto;
+  height: 4rem;
+  background-color: var(--dark);
+  margin: 1rem 0;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--light);
+  border-radius: 1rem;
+  padding: 0 1rem;
+}
+
+/* end of footer */

@@ -90,11 +90,6 @@ function showOverlay(index) {
   overlay.style.display = "flex";
   currentIndex = index;
 
-  // calc max-content width of overlay-title
-  overlayTitle.style.width = "auto";
-  const maxContentWidth = overlayTitle.scrollWidth;
-  overlayTitle.style.width = `calc(${maxContentWidth}px + 2rem)`;
-
   // limit max character on overlay-desc
   const maxCharacters = 400;
   const originalText = overlayDesc.innerText;
@@ -138,4 +133,4 @@ overlay.addEventListener("wheel", (event) => {
 // end of overlay
 
 // for a while (ntar dihapus)
-// popup.style.display = "none";
+popup.style.display = "none";
