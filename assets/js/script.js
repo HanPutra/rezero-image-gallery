@@ -133,4 +133,4 @@ overlay.addEventListener("wheel", (event) => {
 // end of overlay
 
 // for a while (ntar dihapus)
-popup.style.display = "none";
+// popup.style.display = "none";

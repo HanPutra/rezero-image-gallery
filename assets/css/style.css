@@ -316,4 +316,9 @@ footer {
   padding: 0 1rem;
 }
 
+footer p a {
+  color: var(--light);
+  text-decoration: none;
+}
+
 /* end of footer */
