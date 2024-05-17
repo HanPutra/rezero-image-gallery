@@ -314,6 +314,7 @@ footer {
   color: var(--light);
   border-radius: 1rem;
   padding: 0 1rem;
+  z-index: -1;
 }
 
 footer p a {
