@@ -194,6 +194,7 @@ h1 {
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 2;
   background-color: rgba(0, 0, 0, 0.75);
 }
 
@@ -217,7 +218,6 @@ h1 {
   justify-content: center;
   font-size: 1.2rem;
   text-align: center;
-  /* background-color: var(--success); */
 }
 .overlay-text .overlay-title {
   position: absolute;
@@ -314,7 +314,7 @@ footer {
   color: var(--light);
   border-radius: 1rem;
   padding: 0 1rem;
-  z-index: -1;
+  z-index: 1;
 }
 
 footer p a {
