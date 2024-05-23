@@ -325,6 +325,33 @@ footer p a {
 /* media query */
 @media (max-width: 767px) {
   /* Styles for tablets and phones */
+  /* age gate */
+  .confirm {
+    width: calc(100% - (2rem * 2));
+    height: calc(100% - (2rem * 2));
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+  .confirm p {
+    margin-top: 1rem;
+  }
+  .confirm input {
+    font-size: 1.5rem;
+    width: calc(1.5rem * 12);
+    height: calc(1.5rem * 3);
+    border-radius: 1.5rem;
+  }
+  .confirm input#age-yes {
+    bottom: 8.5rem; /* 2 rem padding bottom from confirm, 4.5rem height input#age-no, 2rem margin bottom */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .confirm input#age-no {
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  /* end of age gate */
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -333,7 +360,7 @@ footer p a {
   .confirm input#age-yes {
     left: 50%;
     transform: translateX(-50%);
-    bottom: 12rem; /* 3 rem padding bottom form confirm, 6rem height input#age-no, 3rem margin bottom */
+    bottom: 12rem; /* 3 rem padding bottom from confirm, 6rem height input#age-no, 3rem margin bottom */
   }
   .confirm input#age-no {
     left: 50%;
