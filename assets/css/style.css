@@ -321,3 +321,24 @@ footer p a {
 }
 
 /* end of footer */
+
+/* media query */
+@media (max-width: 767px) {
+  /* Styles for tablets and phones */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Styles for tablets and small laptops */
+  /* age gate */
+  .confirm input#age-yes {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 12rem; /* 3 rem padding bottom form confirm, 6rem height input#age-no, 3rem margin bottom */
+  }
+  .confirm input#age-no {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  /* end of age gate */
+}
+/* end of media query */
