@@ -24,12 +24,13 @@
   box-sizing: border-box;
 }
 
+/* fix overflow because display flex or grid */
 html {
   overflow-x: hidden;
 }
 
 body {
-  font-family: "Rubik", sans-serif;
+  font-family: "Poppins", sans-serif;
   width: 100vw;
   min-height: 100vh;
   position: relative;
@@ -40,8 +41,8 @@ body {
   background-color: var(--light);
 }
 
-/* popup */
-.popup {
+/* age gate */
+.age-gate {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -54,46 +55,41 @@ body {
   align-items: center;
   color: var(--light);
   transition: opacity 0.3s ease;
-  z-index: 1;
+  z-index: 3;
 }
 
-.alert {
+.confirm {
   position: relative;
   width: calc(100% - (3rem * 2));
   height: calc(100% - (3rem * 2));
   background-color: var(--dark);
-  border-radius: 2rem;
-  padding: 4rem 6rem;
+  border-radius: 3rem;
+  padding: 3rem;
 }
-.alert h1,
-.alert p {
-  width: 100%;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  text-align: center;
-}
-
-.alert .confirm {
-  position: absolute;
-  bottom: 4rem;
-  left: 6rem;
-  right: 6rem;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.confirm input {
+.confirm h2 {
   font-size: 2rem;
   font-weight: bold;
-  width: 24rem;
-  height: 6rem;
+  text-align: center;
+}
+.confirm p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+.confirm input {
+  position: absolute;
+  bottom: 3rem;
+  font-size: 2rem;
+  font-weight: bold;
+  width: calc(2rem * 12);
+  height: calc(2rem * 3);
   border-radius: 2rem;
   border: none;
   color: var(--light);
   cursor: pointer;
   outline: none;
   box-shadow: 0 9px #999;
-  transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.3s ease;
 }
 .confirm input:hover {
   opacity: 0.8;
@@ -102,13 +98,15 @@ body {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-.confirm input:first-child {
+.confirm input#age-yes {
+  left: 3rem;
   background-color: var(--success);
 }
-.confirm input:last-child {
+.confirm input#age-no {
+  right: 3rem;
   background-color: var(--danger);
 }
-/* end of popup */
+/* end of age gate */
 
 h1 {
   font-size: 2rem;

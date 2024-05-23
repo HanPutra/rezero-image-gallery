@@ -1,25 +1,32 @@
 // author: Handika Putra
 // github account: https://github.com/HanPutra
 
-// popup
-const yes = document.querySelector("#confirm-yes");
-const no = document.querySelector("#confirm-no");
-const popup = document.querySelector(".popup");
+// age gate
+const yes = document.querySelector("#age-yes");
+const no = document.querySelector("#age-no");
+const ageGate = document.querySelector(".age-gate");
 
+//while confirm yes onclick
 yes.addEventListener("click", function () {
+  //set opacity to 0 after 0.3s
   setTimeout(function () {
-    popup.style.opacity = "0";
+    ageGate.style.opacity = "0";
+    //set display to none after 0.3s
     setTimeout(function () {
-      popup.style.display = "none";
-    }, 300);
+      ageGate.style.display = "none";
+    }, 300); // after wait 0.3s, display will be none while opacity animated for 300ms (in css)
+  }, 300); // while click, wait 0.3s then animate opacity from 1 to 0
+});
+
+// while confirm no onclick
+no.addEventListener("click", function () {
+  // while click and wait for 300ms, the windows is closing immediately
+  setTimeout(function () {
+    window.history.back(); // back to history before if windows can't close
+    window.close(); //close windows
   }, 300);
 });
-
-no.addEventListener("click", function () {
-  window.history.back();
-  window.close();
-});
-// end of popup
+// end of age gate
 
 // gallery
 const galleryItem = document.querySelectorAll(".gallery-item");
