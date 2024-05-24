@@ -57,7 +57,6 @@ body {
   transition: opacity 0.3s ease;
   z-index: 3;
 }
-
 .confirm {
   position: relative;
   width: calc(100% - (3rem * 2));
@@ -111,12 +110,12 @@ body {
 /* header */
 header h1 {
   font-size: 2rem;
-  margin-bottom: 2rem;
 }
 /* end of header */
 
 /* main */
 main {
+  margin-top: 2rem;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -326,6 +325,9 @@ footer p a {
 /* media query */
 @media (max-width: 767px) {
   /* Styles for tablets and phones */
+  body {
+    padding: 1rem;
+  }
   /* age gate */
   .confirm {
     width: calc(100% - (2rem * 2));
@@ -353,6 +355,26 @@ footer p a {
     transform: translateX(-50%);
   }
   /* end of age gate */
+
+  /* header */
+  header h1 {
+    font-size: 1.5rem;
+  }
+  /* end of header */
+
+  /* main */
+  main {
+    margin-top: 1rem;
+    border-radius: 1rem;
+  }
+  main .item {
+    width: calc(100% / 2);
+  }
+  /* style for overlay when image on hover */
+  .item .text {
+    font-size: 1rem;
+  }
+  /* end of main */
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
