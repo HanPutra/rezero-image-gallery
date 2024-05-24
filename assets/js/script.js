@@ -28,30 +28,30 @@ no.addEventListener("click", function () {
 });
 // end of age gate
 
-// gallery
-const galleryItem = document.querySelectorAll(".gallery-item");
-
-galleryItem.forEach((container) => {
-  const image = container.querySelector("img");
-  const divOverlay = document.createElement("div");
-  const divImageText = document.createElement("div");
-  divOverlay.classList.add("gallery-overlay");
-  divImageText.classList.add("image-text");
-  divImageText.innerText = image.alt;
-
-  container.appendChild(divOverlay);
-  container.appendChild(divImageText);
-
+// main
+// create overlay when image on hover
+const item = document.querySelectorAll(".item");
+item.forEach((container) => {
+  const image = container.querySelector("img"); //select image from div item
+  const imageOverlay = document.createElement("div"); // create div overlay for image
+  const imageText = document.createElement("p"); // create p element for image
+  imageOverlay.classList.add("image-overlay"); // add class overlay for div
+  imageText.classList.add("text"); // add class text for p
+  imageText.innerText = image.alt; // create text for p from img alt attribute
+  container.appendChild(imageOverlay); // add div into .item
+  container.appendChild(imageText); // add p into .item
+  // when mouse is hover on .item then
   container.addEventListener("mouseover", () => {
-    divOverlay.style.opacity = 1;
-    divImageText.style.opacity = 1;
+    imageOverlay.style.opacity = 1;
+    imageText.style.opacity = 1;
   });
+  // when mouse in not hover on .item then
   container.addEventListener("mouseout", () => {
-    divOverlay.style.opacity = 0;
-    divImageText.style.opacity = 0;
+    imageOverlay.style.opacity = 0;
+    imageText.style.opacity = 0;
   });
 });
-// end of gallery
+// end of main
 
 // overlay
 const overlay = document.querySelector("#overlay");

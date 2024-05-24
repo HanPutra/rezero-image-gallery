@@ -37,7 +37,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 2rem 0 2rem;
+  padding: 2rem;
   background-color: var(--light);
 }
 
@@ -108,49 +108,52 @@ body {
 }
 /* end of age gate */
 
-h1 {
+/* header */
+header h1 {
   font-size: 2rem;
   margin-bottom: 2rem;
 }
+/* end of header */
 
-/* gallery */
-.gallery {
-  width: calc(100vw - (2rem * 2));
+/* main */
+main {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  border-radius: 2rem;
+  overflow: hidden;
 }
-
-.gallery .gallery-item {
-  height: calc(100% - (0.2rem * 2));
+main .item {
+  height: 100%;
   position: relative;
   -o-object-fit: cover;
   object-fit: cover;
   display: flex;
-  margin: 0.2rem 0.2rem;
-  border-radius: 1rem;
   overflow: hidden;
   cursor: pointer;
+  background-color: var(--dark); /* for fixing odd style when hover */
 }
-
-.gallery .gallery-item img {
+main .item img {
   width: 100%;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease;
 }
-.gallery-item:hover img {
+.item:hover img {
   transform: scale(1.2);
 }
 
+/* adjust width for .item */
 .img3 {
-  width: calc((100% / 3) - (0.2rem * 2));
+  width: calc(100% / 3);
 }
 .img4 {
-  width: calc((100% / 4) - (0.2rem * 2));
+  width: calc(100% / 4);
 }
 .img5 {
-  width: calc((100% / 5) - (0.2rem * 2));
+  width: calc(100% / 5);
 }
 
-.gallery-item .gallery-overlay {
+/* style for overlay when image on hover */
+.item .image-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -158,13 +161,12 @@ h1 {
   right: 0;
   background-color: rgba(0, 0, 0, 0.75);
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease;
 }
-.gallery-item:hover .gallery-overlay {
+.item:hover .image-overlay {
   opacity: 1;
 }
-
-.image-text {
+.item .text {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -178,11 +180,10 @@ h1 {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-
-.gallery-item:hover .image-text {
+.item:hover .text {
   opacity: 1;
 }
-/* end of gallery */
+/* end of main */
 
 /* overlay */
 .overlay {
