@@ -409,29 +409,6 @@ footer p a {
   /* end of age gate */
 
   /* main */
-  main {
-    margin-top: 2rem;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  main .item {
-    height: 100%;
-    position: relative;
-    -o-object-fit: cover;
-    object-fit: cover;
-    display: flex;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  main .item img {
-    width: 100%;
-    transition: transform 0.3s ease;
-  }
-  .item:hover img {
-    transform: scale(1.2);
-  }
-
   /* adjust width for .item */
   main .item:nth-child(5n + 1),
   main .item:nth-child(5n + 2),
