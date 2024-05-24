@@ -24,24 +24,25 @@
   box-sizing: border-box;
 }
 
+/* fix overflow because display flex or grid */
 html {
   overflow-x: hidden;
 }
 
 body {
-  font-family: "Rubik", sans-serif;
+  font-family: "Poppins", sans-serif;
   width: 100vw;
   min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 2rem 0 2rem;
+  padding: 2rem;
   background-color: var(--light);
 }
 
-/* popup */
-.popup {
+/* age gate */
+.age-gate {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -54,46 +55,41 @@ body {
   align-items: center;
   color: var(--light);
   transition: opacity 0.3s ease;
-  z-index: 1;
+  z-index: 3;
 }
 
-.alert {
+.confirm {
   position: relative;
   width: calc(100% - (3rem * 2));
   height: calc(100% - (3rem * 2));
   background-color: var(--dark);
-  border-radius: 2rem;
-  padding: 4rem 6rem;
+  border-radius: 3rem;
+  padding: 3rem;
 }
-.alert h1,
-.alert p {
-  width: 100%;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  text-align: center;
-}
-
-.alert .confirm {
-  position: absolute;
-  bottom: 4rem;
-  left: 6rem;
-  right: 6rem;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.confirm input {
+.confirm h2 {
   font-size: 2rem;
   font-weight: bold;
-  width: 24rem;
-  height: 6rem;
+  text-align: center;
+}
+.confirm p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+.confirm input {
+  position: absolute;
+  bottom: 3rem;
+  font-size: 2rem;
+  font-weight: bold;
+  width: calc(2rem * 12);
+  height: calc(2rem * 3);
   border-radius: 2rem;
   border: none;
   color: var(--light);
   cursor: pointer;
   outline: none;
   box-shadow: 0 9px #999;
-  transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.3s ease;
 }
 .confirm input:hover {
   opacity: 0.8;
@@ -102,57 +98,62 @@ body {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-.confirm input:first-child {
+.confirm input#age-yes {
+  left: 3rem;
   background-color: var(--success);
 }
-.confirm input:last-child {
+.confirm input#age-no {
+  right: 3rem;
   background-color: var(--danger);
 }
-/* end of popup */
+/* end of age gate */
 
-h1 {
+/* header */
+header h1 {
   font-size: 2rem;
   margin-bottom: 2rem;
 }
+/* end of header */
 
-/* gallery */
-.gallery {
-  width: calc(100vw - (2rem * 2));
+/* main */
+main {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  border-radius: 2rem;
+  overflow: hidden;
 }
-
-.gallery .gallery-item {
-  height: calc(100% - (0.2rem * 2));
+main .item {
+  height: 100%;
   position: relative;
   -o-object-fit: cover;
   object-fit: cover;
   display: flex;
-  margin: 0.2rem 0.2rem;
-  border-radius: 1rem;
   overflow: hidden;
   cursor: pointer;
+  background-color: var(--dark); /* for fixing odd style when hover */
 }
-
-.gallery .gallery-item img {
+main .item img {
   width: 100%;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease;
 }
-.gallery-item:hover img {
+.item:hover img {
   transform: scale(1.2);
 }
 
+/* adjust width for .item */
 .img3 {
-  width: calc((100% / 3) - (0.2rem * 2));
+  width: calc(100% / 3);
 }
 .img4 {
-  width: calc((100% / 4) - (0.2rem * 2));
+  width: calc(100% / 4);
 }
 .img5 {
-  width: calc((100% / 5) - (0.2rem * 2));
+  width: calc(100% / 5);
 }
 
-.gallery-item .gallery-overlay {
+/* style for overlay when image on hover */
+.item .image-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -160,13 +161,12 @@ h1 {
   right: 0;
   background-color: rgba(0, 0, 0, 0.75);
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease;
 }
-.gallery-item:hover .gallery-overlay {
+.item:hover .image-overlay {
   opacity: 1;
 }
-
-.image-text {
+.item .text {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -180,11 +180,10 @@ h1 {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-
-.gallery-item:hover .image-text {
+.item:hover .text {
   opacity: 1;
 }
-/* end of gallery */
+/* end of main */
 
 /* overlay */
 .overlay {
@@ -323,3 +322,51 @@ footer p a {
 }
 
 /* end of footer */
+
+/* media query */
+@media (max-width: 767px) {
+  /* Styles for tablets and phones */
+  /* age gate */
+  .confirm {
+    width: calc(100% - (2rem * 2));
+    height: calc(100% - (2rem * 2));
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+  .confirm p {
+    margin-top: 1rem;
+  }
+  .confirm input {
+    font-size: 1.5rem;
+    width: calc(1.5rem * 12);
+    height: calc(1.5rem * 3);
+    border-radius: 1.5rem;
+  }
+  .confirm input#age-yes {
+    bottom: 8.5rem; /* 2 rem padding bottom from confirm, 4.5rem height input#age-no, 2rem margin bottom */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .confirm input#age-no {
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  /* end of age gate */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Styles for tablets and small laptops */
+  /* age gate */
+  .confirm input#age-yes {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 12rem; /* 3 rem padding bottom from confirm, 6rem height input#age-no, 3rem margin bottom */
+  }
+  .confirm input#age-no {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  /* end of age gate */
+}
+/* end of media query */

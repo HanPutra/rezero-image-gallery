@@ -1,50 +1,57 @@
 // author: Handika Putra
 // github account: https://github.com/HanPutra
 
-// popup
-const yes = document.querySelector("#confirm-yes");
-const no = document.querySelector("#confirm-no");
-const popup = document.querySelector(".popup");
+// age gate
+const yes = document.querySelector("#age-yes");
+const no = document.querySelector("#age-no");
+const ageGate = document.querySelector(".age-gate");
 
+//while confirm yes onclick
 yes.addEventListener("click", function () {
+  //set opacity to 0 after 0.3s
   setTimeout(function () {
-    popup.style.opacity = "0";
+    ageGate.style.opacity = "0";
+    //set display to none after 0.3s
     setTimeout(function () {
-      popup.style.display = "none";
-    }, 300);
+      ageGate.style.display = "none";
+    }, 300); // after wait 0.3s, display will be none while opacity animated for 300ms (in css)
+  }, 300); // while click, wait 0.3s then animate opacity from 1 to 0
+});
+
+// while confirm no onclick
+no.addEventListener("click", function () {
+  // while click and wait for 300ms, the windows is closing immediately
+  setTimeout(function () {
+    window.history.back(); // back to history before if windows can't close
+    window.close(); //close windows
   }, 300);
 });
+// end of age gate
 
-no.addEventListener("click", function () {
-  window.history.back();
-  window.close();
-});
-// end of popup
-
-// gallery
-const galleryItem = document.querySelectorAll(".gallery-item");
-
-galleryItem.forEach((container) => {
-  const image = container.querySelector("img");
-  const divOverlay = document.createElement("div");
-  const divImageText = document.createElement("div");
-  divOverlay.classList.add("gallery-overlay");
-  divImageText.classList.add("image-text");
-  divImageText.innerText = image.alt;
-
-  container.appendChild(divOverlay);
-  container.appendChild(divImageText);
-
+// main
+// create overlay when image on hover
+const item = document.querySelectorAll(".item");
+item.forEach((container) => {
+  const image = container.querySelector("img"); //select image from div item
+  const imageOverlay = document.createElement("div"); // create div overlay for image
+  const imageText = document.createElement("p"); // create p element for image
+  imageOverlay.classList.add("image-overlay"); // add class overlay for div
+  imageText.classList.add("text"); // add class text for p
+  imageText.innerText = image.alt; // create text for p from img alt attribute
+  container.appendChild(imageOverlay); // add div into .item
+  container.appendChild(imageText); // add p into .item
+  // when mouse is hover on .item then
   container.addEventListener("mouseover", () => {
-    divOverlay.style.opacity = 1;
-    divImageText.style.opacity = 1;
+    imageOverlay.style.opacity = 1;
+    imageText.style.opacity = 1;
   });
+  // when mouse in not hover on .item then
   container.addEventListener("mouseout", () => {
-    divOverlay.style.opacity = 0;
-    divImageText.style.opacity = 0;
+    imageOverlay.style.opacity = 0;
+    imageText.style.opacity = 0;
   });
 });
-// end of gallery
+// end of main
 
 // overlay
 const overlay = document.querySelector("#overlay");
