@@ -121,6 +121,7 @@ main {
   flex-wrap: wrap;
   border-radius: 2rem;
   overflow: hidden;
+  background-color: var(--dark); /* for fixing odd style when hover */
 }
 main .item {
   height: 100%;
@@ -141,13 +142,29 @@ main .item img {
 }
 
 /* adjust width for .item */
-.img3 {
+main .item:nth-child(17n + 1),
+main .item:nth-child(17n + 2),
+main .item:nth-child(17n + 3) {
   width: calc(100% / 3);
 }
-.img4 {
+main .item:nth-child(17n + 4),
+main .item:nth-child(17n + 5),
+main .item:nth-child(17n + 6),
+main .item:nth-child(17n + 7),
+main .item:nth-child(17n + 8) {
+  width: calc(100% / 5);
+}
+main .item:nth-child(17n + 9),
+main .item:nth-child(17n + 10),
+main .item:nth-child(17n + 11),
+main .item:nth-child(17n + 12) {
   width: calc(100% / 4);
 }
-.img5 {
+main .item:nth-child(17n + 13),
+main .item:nth-child(17n + 14),
+main .item:nth-child(17n + 15),
+main .item:nth-child(17n + 16),
+main .item:nth-child(17n + 17) {
   width: calc(100% / 5);
 }
 
@@ -367,7 +384,7 @@ footer p a {
     margin-top: 1rem;
     border-radius: 1rem;
   }
-  main .item {
+  main .item:nth-child(n + 1) {
     width: calc(100% / 2);
   }
   /* style for overlay when image on hover */
@@ -390,5 +407,41 @@ footer p a {
     transform: translateX(-50%);
   }
   /* end of age gate */
+
+  /* main */
+  main {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  main .item {
+    height: 100%;
+    position: relative;
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  main .item img {
+    width: 100%;
+    transition: transform 0.3s ease;
+  }
+  .item:hover img {
+    transform: scale(1.2);
+  }
+
+  /* adjust width for .item */
+  main .item:nth-child(5n + 1),
+  main .item:nth-child(5n + 2),
+  main .item:nth-child(5n + 3) {
+    width: calc(100% / 3);
+  }
+  main .item:nth-child(5n + 4),
+  main .item:nth-child(5n + 5) {
+    width: calc(100% / 2);
+  }
+  /* end of main */
 }
 /* end of media query */
