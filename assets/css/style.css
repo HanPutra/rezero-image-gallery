@@ -212,6 +212,7 @@ main .item:nth-child(17n + 17) {
   right: 0;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.75);
+  overflow: hidden;
 }
 
 .overlay .content {
