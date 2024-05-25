@@ -416,6 +416,7 @@ footer p a {
   body .overlay .close-button,
   body .overlay .left-arrow,
   body .overlay .right-arrow {
+    position: fixed;
     font-size: 3rem;
     width: 3rem;
     height: 3rem;
