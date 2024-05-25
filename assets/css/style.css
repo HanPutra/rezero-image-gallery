@@ -420,7 +420,7 @@ footer p a {
     font-size: 3rem;
     width: 3rem;
     height: 3rem;
-    top: calc(70% + 1rem);
+    top: calc(85% + 1rem);
     border-radius: 1.5rem;
   }
   body .overlay .close-button {
