@@ -202,6 +202,7 @@ main .item:nth-child(17n + 17) {
 /* end of main */
 
 /* overlay */
+/* overlay is background full width and height with black color and 0.75 opacity */
 .overlay {
   display: none;
   position: fixed;
@@ -213,7 +214,7 @@ main .item:nth-child(17n + 17) {
   background-color: rgba(0, 0, 0, 0.75);
 }
 
-.overlay .overlay-content {
+.overlay .content {
   position: absolute;
   top: 5%;
   left: 25%;
@@ -224,17 +225,19 @@ main .item:nth-child(17n + 17) {
   overflow: hidden;
 }
 
-.overlay-content .overlay-image {
+.content .content-image {
   width: 100%;
 }
-.overlay-content .overlay-text {
+.content .content-text {
+  width: 100%;
+  padding: 1.2rem;
   position: relative;
   display: flex;
   justify-content: center;
   font-size: 1.2rem;
   text-align: center;
 }
-.overlay-text .overlay-title {
+.content-text .content-title {
   position: absolute;
   top: -3rem;
   font-size: 2rem;
@@ -251,12 +254,10 @@ main .item:nth-child(17n + 17) {
   padding: 0 1rem;
 }
 
-.overlay-text .overlay-desc {
+.content-text .content-desc {
   width: 100%;
-  /* background-color: var(--success); */
   text-align: left;
-  text-indent: 1.2rem;
-  padding: 0.6rem;
+  text-indent: 1.2rem; /* for indent paragraph */
   display: inline-block;
   white-space: wrap; /* Prevents text from wrapping to a new line */
   overflow: hidden; /* Hides the overflow */
