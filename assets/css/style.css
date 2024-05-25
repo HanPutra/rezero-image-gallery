@@ -393,6 +393,55 @@ footer p a {
     font-size: 1rem;
   }
   /* end of main */
+
+  /* overlay */
+  .overlay .content {
+    top: 15%;
+    left: 12.5%;
+    right: 12.5%;
+    bottom: 15%;
+    border-radius: 1rem;
+  }
+  .content .content-text {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  .content-text .content-title {
+    top: -2.25rem;
+    font-size: 1.5rem;
+    height: 2.25rem;
+  }
+  .content-text .content-desc {
+    text-indent: 1rem; /* for indent paragraph */
+  }
+  body .overlay .close-button,
+  body .overlay .left-arrow,
+  body .overlay .right-arrow {
+    font-size: 3rem;
+    width: 3rem;
+    height: 3rem;
+    top: calc(100vh - 3rem - 1rem);
+    border-radius: 1.5rem;
+  }
+  body .overlay .close-button {
+    right: calc(50% - 1.5rem);
+  }
+  .close-button:hover {
+    transform: translate(0rem, -0.5rem);
+  }
+  .overlay .left-arrow {
+    left: 12.5%;
+  }
+  .left-arrow:hover {
+    transform: translate(-0.5rem);
+  }
+  .overlay .right-arrow {
+    right: 12.5%;
+  }
+  .right-arrow:hover {
+    transform: translate(0.5rem);
+  }
+  /* end of overlay */
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
