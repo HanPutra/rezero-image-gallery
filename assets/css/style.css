@@ -484,6 +484,7 @@ footer p a {
 
   /* overlay */
   .overlay .content {
+    position: fixed;
     top: 20%;
     left: 12.5%;
     right: 12.5%;
