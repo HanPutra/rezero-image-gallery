@@ -421,5 +421,24 @@ footer p a {
     width: calc(100% / 2);
   }
   /* end of main */
+
+  /* overlay */
+  .overlay .content {
+    top: 20%;
+    left: 12.5%;
+    right: 12.5%;
+    bottom: 20%;
+  }
+  .overlay .close-button {
+    top: 20%;
+    right: 12.5%;
+  }
+  .overlay .left-arrow {
+    left: calc(12.5% - 4rem);
+  }
+  .overlay .right-arrow {
+    right: calc(12.5% - 4rem);
+  }
+  /* end of overlay */
 }
 /* end of media query */
