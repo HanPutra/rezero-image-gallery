@@ -319,17 +319,16 @@ main .item:nth-child(17n + 17) {
 /* footer */
 footer {
   position: relative;
-  width: auto;
-  height: 4rem;
+  width: 100%;
+  height: calc(2rem * 3);
   background-color: var(--dark);
-  margin: 1rem 0;
-  font-size: 1.8rem;
+  margin-top: 2rem;
+  font-size: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--light);
-  border-radius: 1rem;
-  padding: 0 1rem;
+  border-radius: 2rem;
   z-index: 1;
 }
 
@@ -337,7 +336,6 @@ footer p a {
   color: var(--light);
   text-decoration: none;
 }
-
 /* end of footer */
 
 /* media query */
@@ -442,6 +440,18 @@ footer p a {
     transform: translate(0.5rem);
   }
   /* end of overlay */
+
+  /* footer */
+  footer {
+    height: calc(1.5rem * 3);
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    border-radius: 1.5rem;
+  }
+  footer p {
+    text-align: center;
+  }
+  /* end of footer */
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -489,5 +499,9 @@ footer p a {
     right: calc(12.5% - 4rem);
   }
   /* end of overlay */
+
+  /* footer */
+  /* nothing to be adjust */
+  /* end of footer */
 }
 /* end of media query */
