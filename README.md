@@ -1,6 +1,6 @@
 # Re:Zero Image Gallery
 
-![Re:Zero Image Gallery](https://hanputra.github.io/rezero-image-gallery/assets/banner.jpg)
+![Re:Zero Image Gallery](https://hanputra.github.io/rezero-image-gallery)
 
 Welcome to the Re:Zero Image Gallery! This website is a beautifully designed and responsive gallery dedicated to showcasing stunning images from the Re:Zero anime series.
 
