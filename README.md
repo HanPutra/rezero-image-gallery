@@ -18,23 +18,23 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository:**
 
-    ```bash
-    git clone https://github.com/hanputra/rezero-image-gallery.git
-    ```
+   ```bash
+   git clone https://github.com/HanPutra/rezero-image-gallery.git
+   ```
 
 2. **Navigate to the project directory:**
 
-    ```bash
-    cd rezero-image-gallery
-    ```
+   ```bash
+   cd rezero-image-gallery
+   ```
 
 3. **Open `index.html` in your web browser:**
 
-    Simply open the `index.html` file in your preferred web browser. You can double-click the file or run the following command:
+   Simply open the `index.html` file in your preferred web browser. You can double-click the file or run the following command:
 
-    ```bash
-    open index.html
-    ```
+   ```bash
+   open index.html
+   ```
 
 ## 📷 Usage
 
@@ -52,4 +52,4 @@ We welcome contributions! If you have suggestions or improvements, please:
 
 ---
 
-Made with ❤️ by [Han Putra](https://github.com/hanputra)
+Made with ❤️ by [Han Putra](https://github.com/HanPutra)

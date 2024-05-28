@@ -146,26 +146,4 @@ overlay.addEventListener("wheel", (event) => {
     showPreviousImage();
   }
 });
-
-// Adding touch event listeners for swipe functionality
-// let touchStartX = 0;
-// let touchEndX = 0;
-
-// overlay.addEventListener("touchstart", (event) => {
-//   touchStartX = event.changedTouches[0].screenX; // get horizontal coordinate when event running (touchstart) [0] get from first touch
-// });
-
-// overlay.addEventListener("touchmove", (event) => {
-//   touchEndX = event.changedTouches[0].screenX; // get horizontal coordinate when event running (touchmove) [0] get from first touch
-// });
-
-// if touchend in overlay so run this function
-// overlay.addEventListener("touchend", () => {
-//   if (touchEndX < touchStartX) {
-//     showNextImage();
-//   }
-//   if (touchEndX > touchStartX) {
-//     showPreviousImage();
-//   }
-// });
 // end of overlay
